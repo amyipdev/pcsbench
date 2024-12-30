@@ -1,8 +1,8 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
 
 CC := cc
-CFLAGS += -O3 -Wall -Werror $(shell pkg-config --cflags glib-2.0)
-LIBS += -lm $(shell pkg-config --libs glib-2.0)
+CFLAGS += -O3 -Wall -Werror -std=gnu2x $(shell pkg-config --cflags glib-2.0)
+LIBS += $(shell pkg-config --libs glib-2.0)
 SOURCEDIR := src
 SOURCES := $(shell find $(SOURCEDIR) -name '*.c')
 TARGETS := $(SOURCES:.c=.o)
